@@ -1,0 +1,1 @@
+"./IdleLoop.obj" "./codec_aic3254.obj" "./csl_i2c_ioExpander.obj" "./pll_control.obj" "../VC5505_I2S.cmd" -l"Debug/C55XXCSL_LP.lib" -llibc.a 
