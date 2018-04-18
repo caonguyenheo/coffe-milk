@@ -138,6 +138,8 @@
  */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdarg.h>
 #include "csl_uart.h"
 #include "csl_uartAux.h"
 #include "csl_general.h"
@@ -163,7 +165,9 @@
 #define PLL_CNTL2        *(ioport volatile unsigned *)0x1C21
 #define PLL_CNTL3        *(ioport volatile unsigned *)0x1C22
 #define PLL_CNTL4        *(ioport volatile unsigned *)0x1C23
-
+#define MAX_WRITE_LEN (200)
+#define UART_PRINT C55x_msgWrite
+static char write_buffer[MAX_WRITE_LEN];
 /* Global data definition */
 /* UART setup structure */
 CSL_UartSetup uartSetup =
@@ -191,13 +195,20 @@ CSL_UartSetup uartSetup =
 };
 
 CSL_UartObj uartObj;
-
+typedef enum {
+    PLATFORM_WRITE_UART,
+    /** <Write to the UART */
+    PLATFORM_WRITE_PRINTF,
+    /** <printf mapped output -- CCS console */
+    PLATFORM_WRITE_ALL
+    /** <write all - default configuration */
+} WRITE_info;
+static WRITE_info   write_type;
 /* UART data buffers */
 char rdbuffer[100];
 char wrbuffer[55] = "\r\nEnter the size of the string(min 01 to max 99)\r\n";
 char buffer1[30] = "\r\n\nEnter the string:\r\n >> ";
 char buffer2[60] = "\r\n\nPlease stop typing, reading already stopped...!!!\r\n";
-char buffer_test[1024]={0};
 /**
  *  \brief  Tests CSL UART module in polled mode.
  *
@@ -208,7 +219,7 @@ char buffer_test[1024]={0};
  *
  *  \return Test result
  */
-CSL_Status CSL_uartPolledTest(void);
+CSL_Status CSL_uartInitialize(void);
 
 /**
  *  \brief  Function to calculate the system clock
@@ -228,6 +239,8 @@ Uint32 getSysClk(void);
  *
  *  \return none
  */
+Int32 C55x_msgWrite(const char *fmt, ...);
+
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 1 --
    /////  Define PaSs_StAtE variable for catching errors as program executes.
    /////  Define PaSs flag for holding final pass/fail result at program completion.
@@ -238,20 +251,14 @@ Uint32 getSysClk(void);
 int main(void)
 {
 	CSL_Status    status;
-	CSL_UartHandle    hUart;
+	int i = 0;
 	printf("CSL UART POLLED MODE TEST!\n\n");
 	printf("Please Make Sure That HyperTerminal on the Host PC is connected\n\n");
 
-	status = CSL_uartPolledTest();
-	hUart = (CSL_UartHandle)(&uartObj);
-    UART_fputs(hUart,"\r\n**************************************************************\r\n",0);
-    UART_fputs(hUart,"\r\n****               DIGITAL SIGSAL PROCESS                 ****\r\n",0);
-    UART_fputs(hUart,"\r\n****               BOARD EVM5517                          ****\r\n",0);
-    UART_fputs(hUart,"\r\n****               17/04/2018                             ****\r\n",0);
-    UART_fputs(hUart,"\r\n**************************************************************\r\n",0);
+	status = CSL_uartInitialize();
 	if(status != CSL_SOK)
 	{
-		printf("\n\nCSL UART POLLED MODE TEST FAILED!!\n");
+	    UART_PRINT("\n\nCSL UART POLLED MODE TEST FAILED!!\n");
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 2 --
    /////  Reseting PaSs_StAtE to 0 if error detected here.
         PaSs_StAtE = 0x0000; // Was intialized to 1 at declaration.
@@ -259,8 +266,21 @@ int main(void)
 	}
 	else
 	{
-
+	    UART_PRINT("\r\nCSL UART POLLED MODE TEST SUCCESS!!\r\n");
 	}
+    while(1)
+    {
+        if((i%100)==0)
+        {
+            UART_PRINT("\r\n**************************************************************\r\n",0);
+            UART_PRINT("\r\n****               DIGITAL SIGSAL PROCESS                 ****\r\n",0);
+            UART_PRINT("\r\n****               BOARD EVM5517                          ****\r\n",0);
+            UART_PRINT("\r\n****               17/04/2018                             ****\r\n",0);
+            UART_PRINT("\r\n**************************************************************\r\n",0);
+        }
+        i++;
+    }
+
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 3 --
    /////  At program exit, copy "PaSs_StAtE" into "PaSs".
         PaSs = PaSs_StAtE; //If flow gets here, override PaSs' initial 0 with
@@ -280,11 +300,11 @@ int main(void)
  *
  *  \return Test result
  */
-CSL_Status CSL_uartPolledTest(void)
+CSL_Status CSL_uartInitialize(void)
 {
     CSL_UartHandle    hUart;
     CSL_Status        status;
-	Uint16            stringSize;
+//	Uint16            stringSize;
 	Uint32            sysClk;
 
 	sysClk = getSysClk();
@@ -333,114 +353,53 @@ CSL_Status CSL_uartPolledTest(void)
     {
 		printf("UART_setup Successful\n");
 	}
-
-	/* Send the message to HyperTerminal to Query the string size */
-   	status = UART_fputs(hUart,"\r\nEnter the size of the string(min 01 to max 99)\r\n",0);
-//   	UART_fputs(hUart,"\r\n**************************************************************\r\n",0);
-//    UART_fputs(hUart,"\r\n****               DIGITAL SIGSAL PROCESS                 ****\r\n",0);
-//    UART_fputs(hUart,"\r\n****               BOARD EVM5517                          ****\r\n",0);
-//    UART_fputs(hUart,"\r\n****               17/04/2018                             ****\r\n",0);
-//    UART_fputs(hUart,"\r\n**************************************************************\r\n",0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\n\nMessage Sent to HyperTerminal : %s\n",wrbuffer);
-	}
-
-	/* Read the string size entered on HyperTerminal */
-   	status = UART_read(hUart,rdbuffer,2,0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_read failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\nString Size Read from HyperTerminal \n");
-	}
-
-	/* Convert the string size read from HyperTerminal to integer value */
-	stringSize = ((rdbuffer[0]- 0x30)*10) + (rdbuffer[1]-0x30);
-
-	/* Verify the string size. This test code support string size 1 to 99 */
-	if((stringSize < 1) || (stringSize > 99))
-	{
-		printf("Wrong String size - %d!\n",stringSize);
-		return(CSL_ESYS_FAIL);
-	}
-
-	rdbuffer[0] = '\0';
-	rdbuffer[1] = '\0';
-
-	printf("\nSize of the  string entered: %d\n",stringSize);
-
-	status = UART_fputs(hUart, buffer1,0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\n\nMessage Sent to HyperTerminal : %s\n",buffer1);
-	}
-
-	status = UART_read(hUart,rdbuffer,stringSize,0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_read failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\nString Read from HyperTerminal \n");
-	}
-
-	status = UART_fputs(hUart,buffer2,0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\n\nMessage Sent to HyperTerminal : %s\n",buffer2);
-	}
-
-	status = UART_fputs(hUart,"\r\nYOU HAVE ENTERED: ",0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-
-	status = UART_fputs(hUart,rdbuffer,0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-    else
-    {
-		printf("\nMessage Sent to HyperTerminal : \n%s%s\n","\r\nYOU HAVE ENTERED: ",rdbuffer);
-	}
-
-	status = UART_fputs(hUart,"\r\n",0);
-    if(CSL_SOK != status)
-    {
-        printf("UART_fputs failed error code %d\n",status);
-        return(status);
-    }
-
-	rdbuffer[stringSize] = '\0';
-
 	return(CSL_SOK);
 }
+Int32 C55x_msgWrite(const char *fmt, ...)
+{
+    va_list         arg_ptr;
+    Uint32          length;
+    CSL_Status      retVal;
+    CSL_UartHandle  hUart;
 
+    /* Initial printf to temporary buffer.. at least try some sort of sanity check so we don't write all over
+     * memory if the print is too large.
+     */
+    if (strlen(fmt) > MAX_WRITE_LEN)
+    {
+        printf("Exceed's the max write length\n");
+        return (-1);
+    }
+
+    va_start( arg_ptr, fmt );
+    length = vsprintf( (char *)write_buffer, fmt, arg_ptr );
+    va_end( arg_ptr );
+    length = length;
+
+    if ((write_type == PLATFORM_WRITE_PRINTF) || (write_type == PLATFORM_WRITE_ALL))
+    {
+        /*Used to print on the CCS console*/
+        printf("%s", write_buffer);
+        fflush(stdout);
+    }
+
+    /* Handle created */
+    hUart = (CSL_UartHandle)(&uartObj);
+
+    if ((write_type == PLATFORM_WRITE_UART) || (write_type == PLATFORM_WRITE_ALL))
+    {
+        /*Used to print on the serial console*/
+        retVal = UART_fputs(hUart,write_buffer,0);
+        if(CSL_SOK != retVal)
+        {
+            printf("UART_fputs failed error code %d\n",retVal);
+            return retVal;
+        }
+    }
+
+    return retVal;
+
+}
 /**
  *  \brief  Function to calculate the clock at which system is running
  *

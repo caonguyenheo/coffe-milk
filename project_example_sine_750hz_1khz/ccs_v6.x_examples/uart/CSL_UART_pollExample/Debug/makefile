@@ -138,13 +138,13 @@ BIN_OUTPUTS__QUOTED += \
 all: CSL_UART_pollExample.out
 
 dependents:
-	-cd C:/ti/c55_lp/c55_csl_3.08/ccs_v6.x_examples/C55XXCSL_LP/Debug && $(MAKE) all
+	-cd D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/C55XXCSL_LP/Debug && $(MAKE) clean all
 
 # Tool invocations
-CSL_UART_pollExample.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) C:/ti/c55_lp/c55_csl_3.08/ccs_v6.x_examples/C55XXCSL_LP/Debug/C55XXCSL_LP.lib
+CSL_UART_pollExample.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/C55XXCSL_LP/Debug/C55XXCSL_LP.lib
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C5500 Linker'
-	"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/bin/cl55" -v5505 --memory_model=large -g --define="_DEBUG" --define=c5505 --diag_warning=225 --ptrdiff_size=16 --algebraic --asm_source=algebraic -z -m"CSL_UART_pollExample.map" --stack_size=0x200 --heap_size=0x400 -i"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/lib" -i"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include" -i"C:/ti/bios_5_42_02_10/packages/ti/rtdx/lib/c5500" -i"C:/ti/bios_5_42_02_10/packages/ti/bios/lib" -i"C:/ti/c55_lp/c55_csl_3.08/ccs_v6.x_examples/C55XXCSL_LP" -i"C:/ti/c55_lp/c55_csl_3.08/ccs_v6.x_examples/uart/CSL_UART_pollExample" --reread_libs --warn_sections --xml_link_info="CSL_UART_pollExample_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "CSL_UART_pollExample.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/bin/cl55" -v5505 --memory_model=large -g --define="_DEBUG" --define=c5505 --diag_warning=225 --ptrdiff_size=16 --algebraic --asm_source=algebraic -z -m"CSL_UART_pollExample.map" --stack_size=0x200 --heap_size=0x400 -i"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/lib" -i"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include" -i"C:/ti/bios_5_42_02_10/packages/ti/rtdx/lib/c5500" -i"C:/ti/bios_5_42_02_10/packages/ti/bios/lib" -i"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/C55XXCSL_LP" -i"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/uart/CSL_UART_pollExample" --reread_libs --warn_sections --xml_link_info="CSL_UART_pollExample_linkInfo.xml" --rom_model --sys_stacksize=0x200 -o "CSL_UART_pollExample.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -165,7 +165,7 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
-C:/ti/c55_lp/c55_csl_3.08/ccs_v6.x_examples/C55XXCSL_LP/Debug/C55XXCSL_LP.lib:
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/C55XXCSL_LP/Debug/C55XXCSL_LP.lib:
 
 -include ../makefile.targets
 

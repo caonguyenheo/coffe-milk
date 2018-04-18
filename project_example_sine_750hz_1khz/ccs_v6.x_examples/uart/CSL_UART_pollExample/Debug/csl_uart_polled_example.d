@@ -4,70 +4,74 @@ csl_uart_polled_example.obj: ../csl_uart_polled_example.c
 csl_uart_polled_example.obj: C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdio.h
 csl_uart_polled_example.obj: C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/linkage.h
 csl_uart_polled_example.obj: C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdarg.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_uart.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_error.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_types.h
+csl_uart_polled_example.obj: C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/string.h
+csl_uart_polled_example.obj: C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdarg.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_uart.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_error.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_types.h
 csl_uart_polled_example.obj: C:/ti/bios_5_42_02_10/packages/ti/bios/include/tistdtypes.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_uart.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_general.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/soc.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_cpu.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_sysctrl.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_i2c.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_i2s.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_emif.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_spi.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mmcsd.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_lcdc.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_rtc.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_dma.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_sar.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_usb.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_gpio.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_tim.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_wdt.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_idle.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_ldo.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mcbsp.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mcspi.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/cslr_uhpi.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_intc.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_uartAux.h
-csl_uart_polled_example.obj: C:/ti/c55_lp/c55_csl_3.08/inc/csl_sysctrl.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_uart.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_general.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/soc.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_cpu.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_sysctrl.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_i2c.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_i2s.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_emif.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_spi.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mmcsd.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_lcdc.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_rtc.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_dma.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_sar.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_usb.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_gpio.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_tim.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_wdt.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_idle.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_ldo.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mcbsp.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mcspi.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_uhpi.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_intc.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_uartAux.h
+csl_uart_polled_example.obj: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_sysctrl.h
 
 ../csl_uart_polled_example.c: 
 C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdio.h: 
 C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/linkage.h: 
 C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdarg.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_uart.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_error.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_types.h: 
+C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/string.h: 
+C:/ti/ccsv8/tools/compiler/c5500_4.4.1/include/stdarg.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_uart.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_error.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_types.h: 
 C:/ti/bios_5_42_02_10/packages/ti/bios/include/tistdtypes.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_uart.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_general.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/soc.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_cpu.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_sysctrl.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_i2c.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_i2s.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_emif.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_spi.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mmcsd.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_lcdc.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_rtc.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_dma.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_sar.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_usb.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_gpio.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_tim.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_wdt.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_idle.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_ldo.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mcbsp.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_mcspi.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/cslr_uhpi.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_intc.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_uartAux.h: 
-C:/ti/c55_lp/c55_csl_3.08/inc/csl_sysctrl.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_uart.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_general.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/soc.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_cpu.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_sysctrl.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_i2c.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_i2s.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_emif.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_spi.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mmcsd.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_lcdc.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_rtc.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_dma.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_sar.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_usb.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_gpio.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_tim.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_wdt.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_idle.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_ldo.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mcbsp.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_mcspi.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/cslr_uhpi.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_intc.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_uartAux.h: 
+D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/inc/csl_sysctrl.h: 
