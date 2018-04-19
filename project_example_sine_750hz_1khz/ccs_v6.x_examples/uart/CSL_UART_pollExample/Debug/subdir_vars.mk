@@ -15,7 +15,7 @@ C_SRCS += \
 ../aic3204_test.c \
 ../aic3204_tone_headphone.c \
 ../aic3204_tone_stereo_out.c \
-../csl_uart_polled_example.c 
+../main.c 
 
 C_DEPS += \
 ./aic3204_loop_mic_in.d \
@@ -24,7 +24,7 @@ C_DEPS += \
 ./aic3204_test.d \
 ./aic3204_tone_headphone.d \
 ./aic3204_tone_stereo_out.d \
-./csl_uart_polled_example.d 
+./main.d 
 
 OBJS += \
 ./aic3204_loop_mic_in.obj \
@@ -33,7 +33,7 @@ OBJS += \
 ./aic3204_test.obj \
 ./aic3204_tone_headphone.obj \
 ./aic3204_tone_stereo_out.obj \
-./csl_uart_polled_example.obj 
+./main.obj 
 
 OBJS__QUOTED += \
 "aic3204_loop_mic_in.obj" \
@@ -42,7 +42,7 @@ OBJS__QUOTED += \
 "aic3204_test.obj" \
 "aic3204_tone_headphone.obj" \
 "aic3204_tone_stereo_out.obj" \
-"csl_uart_polled_example.obj" 
+"main.obj" 
 
 C_DEPS__QUOTED += \
 "aic3204_loop_mic_in.d" \
@@ -51,7 +51,7 @@ C_DEPS__QUOTED += \
 "aic3204_test.d" \
 "aic3204_tone_headphone.d" \
 "aic3204_tone_stereo_out.d" \
-"csl_uart_polled_example.d" 
+"main.d" 
 
 C_SRCS__QUOTED += \
 "../aic3204_loop_mic_in.c" \
@@ -60,6 +60,6 @@ C_SRCS__QUOTED += \
 "../aic3204_test.c" \
 "../aic3204_tone_headphone.c" \
 "../aic3204_tone_stereo_out.c" \
-"../csl_uart_polled_example.c" 
+"../main.c" 
 
 

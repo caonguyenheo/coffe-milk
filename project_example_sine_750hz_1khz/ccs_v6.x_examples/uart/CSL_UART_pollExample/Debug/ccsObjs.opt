@@ -1,1 +1,1 @@
-"./aic3204_loop_mic_in.obj" "./aic3204_loop_stereo_in1.obj" "./aic3204_loop_stereo_in2.obj" "./aic3204_test.obj" "./aic3204_tone_headphone.obj" "./aic3204_tone_stereo_out.obj" "./csl_uart_polled_example.obj" "../VC5505_UART.cmd" -l"Debug/C55XXCSL_LP.lib" -lrts55x.lib -llibc.a 
+"./aic3204_loop_mic_in.obj" "./aic3204_loop_stereo_in1.obj" "./aic3204_loop_stereo_in2.obj" "./aic3204_test.obj" "./aic3204_tone_headphone.obj" "./aic3204_tone_stereo_out.obj" "./main.obj" "../VC5505_UART.cmd" -l"Debug/C55XXCSL_LP.lib" -lrts55x.lib -llibc.a 
