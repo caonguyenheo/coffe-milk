@@ -144,7 +144,7 @@
 #include "csl_uartAux.h"
 #include "csl_general.h"
 #include "csl_sysctrl.h"
-
+#include "evm5515.h"
 /* Global constants */
 /* String length to be received and transmitted */
 #define WR_STR_LEN    (80u)
@@ -165,8 +165,9 @@
 #define PLL_CNTL2        *(ioport volatile unsigned *)0x1C21
 #define PLL_CNTL3        *(ioport volatile unsigned *)0x1C22
 #define PLL_CNTL4        *(ioport volatile unsigned *)0x1C23
-#define MAX_WRITE_LEN (200)
-#define UART_PRINT C55x_msgWrite
+#define MAX_WRITE_LEN (500)
+#define APP_NAME   "DSP DEMO V_001.00.02"
+
 static char write_buffer[MAX_WRITE_LEN];
 /* Global data definition */
 /* UART setup structure */
@@ -240,7 +241,8 @@ Uint32 getSysClk(void);
  *  \return none
  */
 Int32 C55x_msgWrite(const char *fmt, ...);
-
+static void DisplayBanner(char * AppName);
+extern Int16 aic3204_test();
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 1 --
    /////  Define PaSs_StAtE variable for catching errors as program executes.
    /////  Define PaSs flag for holding final pass/fail result at program completion.
@@ -251,7 +253,6 @@ Int32 C55x_msgWrite(const char *fmt, ...);
 int main(void)
 {
 	CSL_Status    status;
-	int i = 0;
 	printf("CSL UART POLLED MODE TEST!\n\n");
 	printf("Please Make Sure That HyperTerminal on the Host PC is connected\n\n");
 
@@ -267,18 +268,12 @@ int main(void)
 	else
 	{
 	    UART_PRINT("\r\nCSL UART POLLED MODE TEST SUCCESS!!\r\n");
+	    DisplayBanner(APP_NAME);
+	    aic3204_test();
 	}
     while(1)
     {
-        if((i%100)==0)
-        {
-            UART_PRINT("\r\n**************************************************************\r\n",0);
-            UART_PRINT("\r\n****               DIGITAL SIGSAL PROCESS                 ****\r\n",0);
-            UART_PRINT("\r\n****               BOARD EVM5517                          ****\r\n",0);
-            UART_PRINT("\r\n****               17/04/2018                             ****\r\n",0);
-            UART_PRINT("\r\n**************************************************************\r\n",0);
-        }
-        i++;
+
     }
 
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 3 --
@@ -399,6 +394,16 @@ Int32 C55x_msgWrite(const char *fmt, ...)
 
     return retVal;
 
+}
+static void DisplayBanner(char * AppName)
+{
+    UART_PRINT("\n\n\n\r");
+    UART_PRINT("\t\t *************************************************\n\r");
+    UART_PRINT("\t\t **                                             **\n\r");
+    UART_PRINT("\t\t **BORAD EV5517 %s APPLICATION**\n\r", AppName);
+    UART_PRINT("\t\t **                                             **\n\r");
+    UART_PRINT("\t\t *************************************************\n\r");
+    UART_PRINT("\n\n\n\r");
 }
 /**
  *  \brief  Function to calculate the clock at which system is running

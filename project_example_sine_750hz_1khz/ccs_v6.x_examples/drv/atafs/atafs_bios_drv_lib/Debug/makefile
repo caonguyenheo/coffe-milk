@@ -162,21 +162,21 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LIB_OUTPUTS += \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib \
 
 LIB_OUTPUTS__QUOTED += \
-"D:\Digital signal process_TMS320C5517\HUONG_DAN_SU_DUNG_BOARD\project_example_sine_750hz_1khz\ccs_v6.x_examples\drv\atafs\atafs_bios_drv_lib\Debug\atafs_bios_drv_lib.lib" \
+"D:\coffe-milk\project_example_sine_750hz_1khz\ccs_v6.x_examples\drv\atafs\atafs_bios_drv_lib\Debug\atafs_bios_drv_lib.lib" \
 
 
 # All Target
-all: D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib
+all: D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib
 
 # Tool invocations
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib: $(OBJS) $(OBJ_SRCS) $(LIB_SRCS)
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib: $(OBJS) $(OBJ_SRCS) $(LIB_SRCS)
 ifneq ($(strip $(ORDERED_OBJS)),)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C5500 Archiver'
-	"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/bin/ar55" r "D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib" $(ORDERED_OBJS)
+	"C:/ti/ccsv8/tools/compiler/c5500_4.4.1/bin/ar55" r "D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/../../../../ccs_v6.x_examples/drv/atafs/atafs_bios_drv_lib/Debug/atafs_bios_drv_lib.lib" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 endif

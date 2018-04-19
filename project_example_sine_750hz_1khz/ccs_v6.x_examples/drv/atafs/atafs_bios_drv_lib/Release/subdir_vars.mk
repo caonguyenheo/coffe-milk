@@ -6,52 +6,52 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadisk.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadiskfree.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_seek.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_write.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_chdir.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_fileinit.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_flush.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_label.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_vol.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_names.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_readword.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_sector.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_timeout.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_usb.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate_findcluster.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreatedir.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir_.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir__getdir.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadirentry.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataformat.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create_rename.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_createentry.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_setname.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread__nextbroken.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_calc.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fat.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fatphy.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek_relative.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atatell.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_close.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fat.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fatphy.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_write.c \
-D:/Digital\ signal\ process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/version.c 
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadisk.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadiskfree.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_seek.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_write.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_chdir.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_fileinit.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_flush.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_label.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_vol.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_names.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_readword.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_sector.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_timeout.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_usb.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate_findcluster.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreatedir.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir_.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir__getdir.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadirentry.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataformat.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create_rename.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_createentry.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_setname.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread__nextbroken.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_calc.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fat.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fatphy.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek_relative.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atatell.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_close.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fat.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fatphy.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_write.c \
+D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/version.c 
 
 C_DEPS += \
 ./Atadisk.d \
@@ -246,51 +246,51 @@ C_DEPS__QUOTED += \
 "version.d" 
 
 C_SRCS__QUOTED += \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadisk.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadiskfree.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_seek.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_write.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_chdir.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_fileinit.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_flush.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_label.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_vol.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_names.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_readword.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_sector.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_timeout.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_usb.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate_findcluster.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreatedir.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir_.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir__getdir.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadirentry.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataformat.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create_rename.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_createentry.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_setname.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread__nextbroken.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_calc.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fat.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fatphy.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek_relative.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atatell.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_close.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fat.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fatphy.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_write.c" \
-"D:/Digital signal process_TMS320C5517/HUONG_DAN_SU_DUNG_BOARD/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/version.c" 
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadisk.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/Atadiskfree.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_seek.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_bytes_write.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_chdir.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_fileinit.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_flush.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_label.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_labels_vol.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_names.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_readword.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_sector.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_timeout.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ata_usb.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreate_findcluster.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atacreatedir.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir_.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadir__getdir.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atadirentry.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataformat.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_create_rename.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_createentry.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atalong_setname.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread__nextbroken.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_calc.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fat.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataread_fatphy.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/ataseek_relative.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atatell.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_close.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fat.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_fatphy.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/atawrite_write.c" \
+"D:/coffe-milk/project_example_sine_750hz_1khz/ccs_v6.x_examples/drv/atafs/src/version.c" 
 
 

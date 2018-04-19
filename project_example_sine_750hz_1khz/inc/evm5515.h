@@ -79,7 +79,7 @@
 
 
 #define SW_BREAKPOINT
-
+#define UART_PRINT C55x_msgWrite
 //while(1);
 
 /* ------------------------------------------------------------------------ *
@@ -248,7 +248,7 @@
 
 Int16 EVM5515_init( );
 
-
+Int32 C55x_msgWrite(const char *fmt, ...);
 
 /* Wait Functions */
 

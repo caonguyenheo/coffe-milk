@@ -160,5 +160,25 @@
 			<type>1</type>
 			<locationURI>COMMON_ROOT/src/csl_uhpi.c</locationURI>
 		</link>
+		<link>
+			<name>evm5515.c</name>
+			<type>1</type>
+			<locationURI>COMMON_ROOT/src/evm5515.c</locationURI>
+		</link>
+		<link>
+			<name>evm5515_gpio.c</name>
+			<type>1</type>
+			<locationURI>COMMON_ROOT/src/evm5515_gpio.c</locationURI>
+		</link>
+		<link>
+			<name>evm5515_i2c.c</name>
+			<type>1</type>
+			<locationURI>COMMON_ROOT/src/evm5515_i2c.c</locationURI>
+		</link>
+		<link>
+			<name>evm5517_i2cgpio.c</name>
+			<type>1</type>
+			<locationURI>COMMON_ROOT/src/evm5517_i2cgpio.c</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>

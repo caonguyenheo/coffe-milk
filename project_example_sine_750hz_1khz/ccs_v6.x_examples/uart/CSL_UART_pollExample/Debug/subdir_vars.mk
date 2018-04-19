@@ -9,21 +9,57 @@ CMD_SRCS += \
 ../VC5505_UART.cmd 
 
 C_SRCS += \
+../aic3204_loop_mic_in.c \
+../aic3204_loop_stereo_in1.c \
+../aic3204_loop_stereo_in2.c \
+../aic3204_test.c \
+../aic3204_tone_headphone.c \
+../aic3204_tone_stereo_out.c \
 ../csl_uart_polled_example.c 
 
 C_DEPS += \
+./aic3204_loop_mic_in.d \
+./aic3204_loop_stereo_in1.d \
+./aic3204_loop_stereo_in2.d \
+./aic3204_test.d \
+./aic3204_tone_headphone.d \
+./aic3204_tone_stereo_out.d \
 ./csl_uart_polled_example.d 
 
 OBJS += \
+./aic3204_loop_mic_in.obj \
+./aic3204_loop_stereo_in1.obj \
+./aic3204_loop_stereo_in2.obj \
+./aic3204_test.obj \
+./aic3204_tone_headphone.obj \
+./aic3204_tone_stereo_out.obj \
 ./csl_uart_polled_example.obj 
 
 OBJS__QUOTED += \
+"aic3204_loop_mic_in.obj" \
+"aic3204_loop_stereo_in1.obj" \
+"aic3204_loop_stereo_in2.obj" \
+"aic3204_test.obj" \
+"aic3204_tone_headphone.obj" \
+"aic3204_tone_stereo_out.obj" \
 "csl_uart_polled_example.obj" 
 
 C_DEPS__QUOTED += \
+"aic3204_loop_mic_in.d" \
+"aic3204_loop_stereo_in1.d" \
+"aic3204_loop_stereo_in2.d" \
+"aic3204_test.d" \
+"aic3204_tone_headphone.d" \
+"aic3204_tone_stereo_out.d" \
 "csl_uart_polled_example.d" 
 
 C_SRCS__QUOTED += \
+"../aic3204_loop_mic_in.c" \
+"../aic3204_loop_stereo_in1.c" \
+"../aic3204_loop_stereo_in2.c" \
+"../aic3204_test.c" \
+"../aic3204_tone_headphone.c" \
+"../aic3204_tone_stereo_out.c" \
 "../csl_uart_polled_example.c" 
 
 
