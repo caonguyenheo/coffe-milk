@@ -99,9 +99,9 @@ Int16 aic3204_loop_mic_in( )
     I2S0_CR   = 0x8012;    // 16-bit word, Master, enable I2S
     
     /* Play Tone */
-    for( i = 0 ; i < 5 ; i++ )
+    for( i = 0 ; i < 10 ; i++ )
     {
-        for ( j = 0 ; j < 1000 ; j++ )
+        for ( j = 0 ; j < 2000 ; j++ )
         {
             for ( sample = 0 ; sample < 48 ; sample++ )
             {
@@ -119,6 +119,7 @@ Int16 aic3204_loop_mic_in( )
             }
         }
     }
+    UART_PRINT("\r\n***********I2S RESET***********\r\n");
     /* Disble I2S */
     I2S0_CR = 0x00;
    

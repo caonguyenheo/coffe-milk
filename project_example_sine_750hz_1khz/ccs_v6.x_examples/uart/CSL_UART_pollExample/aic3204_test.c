@@ -83,10 +83,10 @@ Int16 aic3204_test( )
 {
 
     /* Test Instructions */
-	UART_PRINT("For this test, make sure J27 (1-3=Off, 2-4=Off)\r\n");
-	UART_PRINT("J28 (1-3=Off, 2-4=Off)\r\n");
-	UART_PRINT("J29 (1-3=On,  2-4=On)\r\n");
-	UART_PRINT("J30 (1-3=On,  2-4=On)\r\n");
+//	UART_PRINT("For this test, make sure J27 (1-3=Off, 2-4=Off)\r\n");
+//	UART_PRINT("J28 (1-3=Off, 2-4=Off)\r\n");
+//	UART_PRINT("J29 (1-3=On,  2-4=On)\r\n");
+//	UART_PRINT("J30 (1-3=On,  2-4=On)\r\n");
 
     /* Configure Serial Port 0 */
     SYS_EXBUSSEL &= ~0x0300;   // 
@@ -110,31 +110,35 @@ Int16 aic3204_test( )
     /* Release AIC3204 reset */
     EVM5515_I2CGPIO_configLine(  0, 0 );
     EVM5515_I2CGPIO_writeLine(  0, 0 );  // AIC_RST = 0
-
+#if MODE_AUDIO_TONE
     /* Codec tests */
     UART_PRINT( "\r\n-> 1 KHz Tone on Headphone.\r\n" );
     if ( aic3204_tone_headphone( ) )
         return 1;
        
-    EVM5515_wait( 100 );  // Wait
+    EVM5515_wait( 10 );  // Wait
     UART_PRINT( "\r\n-> 1 KHz Tone on Stereo OUT.\r\n" );
     if ( aic3204_tone_stereo_out( ) )
         return 1;
        
-    EVM5515_wait( 100 );  // Wait
+    EVM5515_wait( 10 );  // Wait
     UART_PRINT( "\r\n<-> Audio Loopback from Stereo IN 1 --> to HP\r\n" );
     if ( aic3204_loop_stereo_in1( ) )
         return 1;
         
-    EVM5515_wait( 100 );  // Wait
+    EVM5515_wait( 10 );  // Wait
     UART_PRINT( "\r\n<-> Audio Loopback from Stereo IN 2 --> to Stereo OUT\r\n" );
     if ( aic3204_loop_stereo_in2( ) )
         return 1;
-    
-    EVM5515_wait( 100 );  // Wait
+#endif
+#if MODE_MICROPHONE
+/   EVM5515_wait( 5 );  // Wait
     UART_PRINT( "\r\n<-> Microphone --> to HP\r\n" );
-    if ( aic3204_loop_mic_in( ) )
-        return 1;
+    if ( aic3204_loop_mic_in() )
+    {
+//        return 1;
+    }
+#endif
 
 	EVM5515_GPIO_setOutput( GPIO26, 0 );
     return 0;

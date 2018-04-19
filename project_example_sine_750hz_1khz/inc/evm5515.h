@@ -80,6 +80,8 @@
 
 #define SW_BREAKPOINT
 #define UART_PRINT C55x_msgWrite
+#define MODE_MICROPHONE        0
+#define MODE_AUDIO_TONE        0
 //while(1);
 
 /* ------------------------------------------------------------------------ *

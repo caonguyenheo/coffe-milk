@@ -206,10 +206,9 @@ typedef enum {
 } WRITE_info;
 static WRITE_info   write_type;
 /* UART data buffers */
-char rdbuffer[100];
+//char rdbuffer[100];
 char wrbuffer[55] = "\r\nEnter the size of the string(min 01 to max 99)\r\n";
-char buffer1[30] = "\r\n\nEnter the string:\r\n >> ";
-char buffer2[60] = "\r\n\nPlease stop typing, reading already stopped...!!!\r\n";
+
 /**
  *  \brief  Tests CSL UART module in polled mode.
  *
@@ -267,13 +266,13 @@ int main(void)
 	}
 	else
 	{
-	    UART_PRINT("\r\nCSL UART POLLED MODE TEST SUCCESS!!\r\n");
 	    DisplayBanner(APP_NAME);
 	    aic3204_test();
 	}
     while(1)
     {
-
+        UART_PRINT( "\r\n<-> Microphone --> to HP\r\n" );
+        aic3204_loop_mic_in();
     }
 
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 3 --
@@ -404,6 +403,7 @@ static void DisplayBanner(char * AppName)
     UART_PRINT("\t\t **                                             **\n\r");
     UART_PRINT("\t\t *************************************************\n\r");
     UART_PRINT("\n\n\n\r");
+    UART_PRINT("\r\nCSL UART MODE SUCCESS!!\r\n");
 }
 /**
  *  \brief  Function to calculate the clock at which system is running
