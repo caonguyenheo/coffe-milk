@@ -82,6 +82,13 @@
 #define UART_PRINT C55x_msgWrite
 #define MODE_MICROPHONE        0
 #define MODE_AUDIO_TONE        0
+#define M_PI 3.14159265358979323846
+
+
+#define MODE_MICIN_BUTTERWORTHLPF_OUTSPEAKER
+
+/*MICIN OUTSPEAKER */
+//#define MODE_MICIN_OUTSPEAKER
 //while(1);
 
 /* ------------------------------------------------------------------------ *

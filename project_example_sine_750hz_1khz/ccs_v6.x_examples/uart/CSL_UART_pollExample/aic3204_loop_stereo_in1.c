@@ -28,7 +28,25 @@ extern Int16 AIC3204_rset( Uint16 regnum, Uint16 regval);
 
 #define Rcv 0x08
 #define Xmit 0x20
+double xv2[3] ={0};
+double yv2[3]= {0};
 
+void getLPCoefficientsButterworth2Pole1(const int samplerate, const double cutoff, double* const ax, double* const by)
+{
+    double PI      = 3.1415926535897932385;
+    double sqrt2 = 1.4142135623730950488;
+
+    double QcRaw  = (2 * PI * cutoff) / samplerate; // Find cutoff frequency in [0..PI]
+    double QcWarp = tan(QcRaw); // Warp cutoff frequency
+
+    double gain = 1 / (1+sqrt2/QcWarp + 2/(QcWarp*QcWarp));
+    by[2] = (1 - sqrt2/QcWarp + 2/(QcWarp*QcWarp)) * gain;
+    by[1] = (2 - 2 * 2/(QcWarp*QcWarp)) * gain;
+    by[0] = 1;
+    ax[0] = 1 * gain;
+    ax[1] = 2 * gain;
+    ax[2] = 1 * gain;
+}
 /*
  *
  *  aic3204_loop_stereo_in1( )
@@ -97,7 +115,10 @@ Int16 aic3204_loop_stereo_in1( )
     I2S0_SRGR = 0x0015;
     I2S0_ICMR = 0x0028;    // Enable interrupts
     I2S0_CR   = 0x8012;    // 16-bit word, Master, enable I2S
-    
+    double ax[3] = {0};
+    double by[3]= {0};
+    double data5 = 0;
+    getLPCoefficientsButterworth2Pole1(48000, 1000, ax, by);
     /* Play Tone */
     for ( i = 0 ; i < 5 ; i++ )
     {
@@ -112,8 +133,21 @@ Int16 aic3204_loop_stereo_in1( )
 
 				/* Write Digital audio input */
                 while((Xmit & I2S0_IR) == 0);  // Wait for receive interrupt to be pending
-				I2S0_W0_MSW_W = data1;  // 16 bit left channel transmit audio data
-      	        I2S0_W1_MSW_W = data2;  // 16 bit right channel transmit audio data
+                xv2[2] = xv2[1]; xv2[1] = xv2[0];
+                xv2[0] = ((double) data1);
+                yv2[2] = yv2[1]; yv2[1] = yv2[0];
+
+                yv2[0] =   (ax[0] * xv2[0] + ax[1] * xv2[1] + ax[2] * xv2[2]
+                         - by[1] * yv2[0]
+                         - by[2] * yv2[1]);
+
+                data5 = yv2[0];
+                I2S0_W0_MSW_W = data5;
+                I2S0_W1_MSW_R = 0;
+                I2S0_W0_LSW_W = 0;
+                I2S0_W1_LSW_W = 0;
+//				I2S0_W0_MSW_W = data1;  // 16 bit left channel transmit audio data
+//      	        I2S0_W1_MSW_W = data2;  // 16 bit right channel transmit audio data
             }
         }
     }

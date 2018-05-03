@@ -132,7 +132,7 @@ Int16 aic3204_test( )
         return 1;
 #endif
 #if MODE_MICROPHONE
-/   EVM5515_wait( 5 );  // Wait
+   EVM5515_wait( 5 );  // Wait
     UART_PRINT( "\r\n<-> Microphone --> to HP\r\n" );
     if ( aic3204_loop_mic_in() )
     {

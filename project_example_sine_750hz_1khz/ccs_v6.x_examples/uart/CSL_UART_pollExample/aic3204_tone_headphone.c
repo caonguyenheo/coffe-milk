@@ -47,7 +47,7 @@ Int16 aic3204_tone_headphone( )
     };
     Int16 j, i = 0;
     Int16 sample;
-   
+
      /* Configure AIC3204 */
     AIC3204_rset(  0, 0x00 );      // Select page 0
     AIC3204_rset(  1, 0x01 );      // Reset codec

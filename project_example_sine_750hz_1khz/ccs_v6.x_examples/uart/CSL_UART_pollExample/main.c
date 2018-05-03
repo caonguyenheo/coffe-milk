@@ -145,6 +145,8 @@
 #include "csl_general.h"
 #include "csl_sysctrl.h"
 #include "evm5515.h"
+#include <math.h>
+#include <stdlib.h>
 /* Global constants */
 /* String length to be received and transmitted */
 #define WR_STR_LEN    (80u)
@@ -252,13 +254,10 @@ extern Int16 aic3204_test();
 int main(void)
 {
 	CSL_Status    status;
-	printf("CSL UART POLLED MODE TEST!\n\n");
-	printf("Please Make Sure That HyperTerminal on the Host PC is connected\n\n");
-
-	status = CSL_uartInitialize();
+    status = CSL_uartInitialize();
 	if(status != CSL_SOK)
 	{
-	    UART_PRINT("\n\nCSL UART POLLED MODE TEST FAILED!!\n");
+	    UART_PRINT("\n\nCSL UART POLLED MODE TEST FAILED!!\r\n");
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 2 --
    /////  Reseting PaSs_StAtE to 0 if error detected here.
         PaSs_StAtE = 0x0000; // Was intialized to 1 at declaration.
@@ -267,12 +266,26 @@ int main(void)
 	else
 	{
 	    DisplayBanner(APP_NAME);
+	    UART_PRINT("\r\nCSL UART POLLED MODE TEST\n\n");
+	    UART_PRINT("\r\nPlease Make Sure Terminal on the Host PC is connected\r\n");
+	    UART_PRINT("\r\nsize Uint32:%d\r\n",sizeof(Uint32));
+	    UART_PRINT("\r\nsize Uint16:%d\r\n",sizeof(Uint16));
+	    UART_PRINT("\r\nsize Uint8:%d\r\n",sizeof(Uint8));
+	    UART_PRINT("\r\nsize Int32:%d\r\n",sizeof(Int32));
+	    UART_PRINT("\r\nsize Int16:%d\r\n",sizeof(Int16));
+	    UART_PRINT("\r\nsize Int8:%d\r\n",sizeof(Int8));
+	    UART_PRINT("\r\nsize double:%d\r\n",sizeof(double));
+	    UART_PRINT("\r\nsize float:%d\r\n",sizeof(float));
 	    aic3204_test();
+
 	}
     while(1)
     {
-        UART_PRINT( "\r\n<-> Microphone --> to HP\r\n" );
+        UART_PRINT("\r\n<-> Microphone --> to HP\r\n" );
+//        aic3204_tone_headphone();
         aic3204_loop_mic_in();
+//        aic3204_loop_stereo_in1();
+
     }
 
    /////INSTRUMENTATION FOR BATCH TESTING -- Part 3 --
