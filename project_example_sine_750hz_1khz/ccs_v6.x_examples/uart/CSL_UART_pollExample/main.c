@@ -209,7 +209,7 @@ typedef enum {
 static WRITE_info   write_type;
 /* UART data buffers */
 //char rdbuffer[100];
-char wrbuffer[55] = "\r\nEnter the size of the string(min 01 to max 99)\r\n";
+//char wrbuffer[55] = "\r\nEnter the size of the string(min 01 to max 99)\r\n";
 
 /**
  *  \brief  Tests CSL UART module in polled mode.

@@ -35,10 +35,13 @@ void getLPCoefficientsButterworth2Pole();
 #define NPOLES 10
 #define GAIN   1.038937175e+12
 
-static float xv[NZEROS+1]={0}, yv[NPOLES+1]={0};
-double xv1[3] ={0};
-double yv1[3]= {0};
-
+float xv[NZEROS+1] = {0};
+float yv[NPOLES+1] = {0};
+float xv3[NZEROS+1] = {0};
+float yv3[NPOLES+1] = {0};
+//double xv1[3] ={0};
+//double yv1[3]= {0};
+#if 0
 void getLPCoefficientsButterworth2Pole(const int samplerate, const double cutoff, double* const ax, double* const by)
 {
     double PI      = 3.1415926535897932385;
@@ -55,7 +58,7 @@ void getLPCoefficientsButterworth2Pole(const int samplerate, const double cutoff
     ax[1] = 2 * gain;
     ax[2] = 1 * gain;
 }
-
+#endif
 /*
  *
  *  aic3204_loop_mic_in( )
@@ -66,9 +69,11 @@ Int16 aic3204_loop_mic_in( )
 {
     /* Pre-generated sine wave data, 16-bit signed samples */
     Int16 j = 0, i = 0;
-    Int16 sample, data1, data2, data3, data4;
-//    float data5 = 0, data6 = 0, data7 = 0;
-    double data5 = 0, data6 = 0, data7 = 0;
+    Int16 sample = 0, data2 = 0, data4 = 0;
+    Int16  data1, data3;
+    Int16 data5 = 0, data6 = 0, data7 = 0;
+    float data8 = 0, data9 = 0;
+//    double data5 = 0, data6 = 0, data7 = 0;
 //    Int16 sinetable[48]={0};
 //    Int16 sinetable1[48]={0};
 
@@ -103,8 +108,8 @@ Int16 aic3204_loop_mic_in( )
     AIC3204_rset( 65, 0x00 );      // Left DAC gain to 0dB VOL; Right tracks Left
     AIC3204_rset( 63, 0xd4 );      // Power up left,right data paths and set channel
     AIC3204_rset(  0, 0x01 );      // Select page 1
-    AIC3204_rset( 16, 0x06 );      // Unmute HPL , 6dB gain
-    AIC3204_rset( 17, 0x06 );      // Unmute HPR , 6dB gain
+    AIC3204_rset( 16, 0x03 );      // Unmute HPL , 6dB gain
+    AIC3204_rset( 17, 0x03 );      // Unmute HPR , 6dB gain
     AIC3204_rset(  9, 0x30 );      // Power up HPL,HPR
     AIC3204_rset(  0, 0x00 );      // Select page 0
     EVM5515_wait( 500 );           // Wait
@@ -131,9 +136,9 @@ Int16 aic3204_loop_mic_in( )
     I2S0_CR   = 0x8012;    // 16-bit word, Master, enable I2S
 
     /* Play Tone */
-    double ax[3] = {0};
-    double by[3]= {0};
-    getLPCoefficientsButterworth2Pole(44100, 1000, ax, by);
+//    double ax[3] = {0};
+//    double by[3]= {0};
+//    getLPCoefficientsButterworth2Pole(44100, 1000, ax, by);
 
 #ifdef MODE_MICIN_BUTTERWORTHLPF_OUTSPEAKER
       for(;;)
@@ -188,37 +193,56 @@ Int16 aic3204_loop_mic_in( )
       }*/
 #endif
 
-#if 0
-    for(;;)
-    {
-//        data3 = I2S0_W0_MSW_R;
-//        data1 = I2S0_W0_LSW_R;
-        data6 = I2S0_W0_MSW_R;
-        data7 = I2S0_W0_LSW_R;
-        data4 = I2S0_W1_MSW_R;
-        data2 = I2S0_W1_LSW_R;
-        while((Rcv & I2S0_IR) == 0);  // Wait for interrupt
-        xv[0] = xv[1]; xv[1] = xv[2]; xv[2] = xv[3]; xv[3] = xv[4]; xv[4] = xv[5]; xv[5] = xv[6]; xv[6] = xv[7]; xv[7] = xv[8]; xv[8] = xv[9]; xv[9] = xv[10];
-//                xv[10] = next input value / GAIN;
-//                xv[10] = ((float) data3)/GAIN;
-                xv[10] = (data6)/GAIN;
-                yv[0] = yv[1]; yv[1] = yv[2]; yv[2] = yv[3]; yv[3] = yv[4]; yv[4] = yv[5]; yv[5] = yv[6]; yv[6] = yv[7]; yv[7] = yv[8]; yv[8] = yv[9]; yv[9] = yv[10];
-                yv[0] = yv[1]; yv[1] = yv[2]; yv[2] = yv[3]; yv[3] = yv[4]; yv[4] = yv[5]; yv[5] = yv[6]; yv[6] = yv[7]; yv[7] = yv[8]; yv[8] = yv[9]; yv[9] = yv[10];
-                yv[10] =   (xv[0] + xv[10]) + 10 * (xv[1] + xv[9]) + 45 * (xv[2] + xv[8])
-                                    + 120 * (xv[3] + xv[7]) + 210 * (xv[4] + xv[6]) + 252 * xv[5]
-                                    + ( -0.4327676731 * yv[0]) + (  4.6897864353 * yv[1])
-                                    + (-22.8860944020 * yv[2]) + ( 66.2310069140 * yv[3])
-                                    + (-125.8758673700 * yv[4]) + (164.1710393500 * yv[5])
-                                    + (-148.8078582500 * yv[6]) + ( 92.5645061460 * yv[7])
-                                    + (-37.8170211260 * yv[8]) + (  9.1632699778 * yv[9]);
-
-                data5=yv[10];
-                I2S0_W0_MSW_W = data5;
-                I2S0_W0_LSW_W = 0;
-//                I2S0_W1_MSW_W = data3;
-//                I2S0_W1_LSW_W = 0;
-//                while((Xmit & I2S0_IR) == 0);  // Wait for interrupt
-    }
+#if 1
+//      for( i = 0 ; i < 10 ; i++ )
+//      {
+//          for ( j = 0 ; j < 1000 ; j++ )
+//          {
+//              for ( sample = 0 ; sample < 48 ; sample++ )
+//              {
+      for(;;)
+      {
+                  data6 = I2S0_W0_MSW_R; // 16 bit left channel transmit audio data
+                  data7 = I2S0_W0_LSW_R;
+                  data4 = I2S0_W1_MSW_R; // 16 bit right channel received audio data
+                  data2 = I2S0_W1_LSW_R;
+                  while((Rcv & I2S0_IR) == 0);  // Wait for interrupt
+//                  UART_PRINT("\r\data6:%d\r\n",data6); // printf value
+//                  UART_PRINT("\r\data7:%d\r\n",data7); // printf value
+                  xv[0] = xv[1]; xv[1] = xv[2]; xv[2] = xv[3]; xv[3] = xv[4]; xv[4] = xv[5]; xv[5] = xv[6]; xv[6] = xv[7]; xv[7] = xv[8];
+                  xv[8] = xv[9];xv[9] = xv[10];
+                  xv[10] = (float)data6/GAIN;
+                  yv[0] = yv[1]; yv[1] = yv[2]; yv[2] = yv[3]; yv[3] = yv[4]; yv[4] = yv[5]; yv[5] = yv[6]; yv[6] = yv[7]; yv[7] = yv[8]; yv[8] = yv[9]; yv[9] = yv[10];
+                  yv[10] =   (xv[0] + xv[10]) + 10 * (xv[1] + xv[9]) + 45 * (xv[2] + xv[8])
+                           + 120 * (xv[3] + xv[7]) + 210 * (xv[4] + xv[6]) + 252 * xv[5]
+                           + ( -0.4327676731 * yv[0]) + (  4.6897864353 * yv[1])
+                           + ( -22.8860944020 * yv[2]) + (  66.2310069140 * yv[3])
+                           + (-125.8758673700 * yv[4]) + ( 164.1710393500 * yv[5])
+                           + (-148.8078582500 * yv[6]) + ( 92.5645061460 * yv[7])
+                           + (-37.817021126 * yv[8]) + (  9.1632699778 * yv[9]);
+                  data8 = yv[10];
+                  xv3[0] = xv3[1]; xv3[1] = xv3[2]; xv3[2] = xv3[3]; xv3[3] = xv3[4]; xv3[4] = xv3[5]; xv3[5] = xv3[6]; xv3[6] = xv3[7]; xv3[7] = xv3[8];
+                  xv3[8] = xv3[9];xv3[9] = xv3[10];
+                  xv3[10] = (float)data4/GAIN;
+                  yv3[0] = yv3[1]; yv3[1] = yv3[2]; yv3[2] = yv3[3]; yv3[3] = yv3[4]; yv3[4] = yv3[5]; yv3[5] = yv3[6]; yv3[6] = yv3[7]; yv3[7] = yv3[8]; yv3[8] = yv3[9]; yv3[9] = yv3[10];
+                  yv3[10] =   (xv3[0] + xv3[10]) + 10 * (xv3[1] + xv3[9]) + 45 * (xv3[2] + xv3[8])
+                           + 120 * (xv3[3] + xv3[7]) + 210 * (xv3[4] + xv3[6]) + 252 * xv3[5]
+                           + ( -0.4327676731 * yv3[0]) + (  4.6897864353 * yv3[1])
+                           + ( -22.8860944020 * yv3[2]) + ( 66.2310069140 * yv3[3])
+                           + (-125.8758673700 * yv3[4]) + ( 164.1710393500 * yv3[5])
+                           + (-148.8078582500 * yv3[6]) + ( 92.5645061460 * yv3[7])
+                           + (-37.817021126 * yv3[8]) + (  9.1632699778 * yv3[9]);
+                  data9 = yv3[10];
+////              UART_PRINT("\r\nyv[10]:%d\r\n",yv[10]); // printf value
+                  I2S0_W0_MSW_W = data8;
+                  I2S0_W0_LSW_W = 0;
+//                  UART_PRINT("\r\nI2S0_W0_MSW_W:%d\r\n",I2S0_W0_MSW_W);
+                  I2S0_W1_MSW_W = data9;
+                  I2S0_W1_LSW_W = 0;
+//                  while((Xmit & I2S0_IR) == 0); // Wait for interrupt
+              }
+//          }
+//      }
 #endif
 
 #ifdef MODE_MICIN_OUTSPEAKER
@@ -233,8 +257,9 @@ Int16 aic3204_loop_mic_in( )
       	        data1 = I2S0_W0_LSW_R;
       	        data4 = I2S0_W1_MSW_R;
       	        data2 = I2S0_W1_LSW_R;
-//      	        sinetable1[sample] = (sin(2 * M_PI * data4 * sample / 48000) + sin(2 * M_PI * data4 * sample / 48000));
-            	while((Rcv & I2S0_IR) == 0);  // Wait for interrupt            	
+//      	    sinetable1[sample] = (sin(2 * M_PI * data4 * sample / 48000) + sin(2 * M_PI * data4 * sample / 48000));
+            	while((Rcv & I2S0_IR) == 0);  // Wait for interrupt
+
 				I2S0_W0_MSW_W = data3;
       	        I2S0_W0_LSW_W = 0;
       	        I2S0_W1_MSW_W = data4;
